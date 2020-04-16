@@ -1,0 +1,13 @@
+<div class="container padding-modal">
+    <form [formGroup]="form" (submit)="submit()" class="d-flex flex-column">
+        <div *ngFor="let field of formFields" class="form-group">
+            <label [for]="field.formControlName">{{ field.label }}</label>
+            <input class="form-control"
+                   [formControlName]="field.formControlName"
+                   [id]="field.formControlName"
+                   [autocomplete]="field.autocomplete"
+                   [type]="field.type">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<div *ngFor="let toast of toastsService.toasts" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="mr-auto">HackTheVirus</strong>
+        <button type="button" class="ml-2 mb-1 close" aria-label="Close" (click)="toastsService.clear()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        {{ toast.message }}
+    </div>
+</div>
