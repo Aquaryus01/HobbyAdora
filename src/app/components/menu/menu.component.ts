@@ -4,6 +4,7 @@ import {AuthService} from '../../services/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
 import { ModalRegisterComponent } from '../modal-register/modal-register.component';
+import { ModalAddComponent } from '../modal-add/modal-add.component';
 
 @Component({
     selector: 'app-menu',
@@ -49,7 +50,8 @@ export class MenuComponent implements OnInit {
 
     private setAuthMenuItems() {
         if (this.authState) {
-            this.rightMenuItems = [{ name: 'Logout', action: () => this.authService.logout(), children: [] }];
+            this.rightMenuItems = [ { name: 'Add new Skill', action: () => this.addSkilModal(), children: [] },
+                                    { name: 'Logout', action: () => this.authService.logout(), children: [] } ];
         } else {
             this.rightMenuItems = [{ name: 'Login',     action: () => this.loginModal() , children: [] },
                                    { name: 'Register',  action: () => this.registerModal() , children: [] }];
@@ -63,6 +65,10 @@ export class MenuComponent implements OnInit {
 
     registerModal() {
         return this.modalService.open(ModalRegisterComponent)
+    }
+
+    addSkilModal(){
+        return this.modalService.open(ModalAddComponent)
     }
 
     @HostListener('window:scroll', ['$event'])

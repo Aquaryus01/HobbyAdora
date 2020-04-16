@@ -29,19 +29,19 @@ export class ModalRegisterComponent implements OnInit {
                 private activeModal: NgbActiveModal) {
 
         this.form = new FormGroup({
-            firstName: new FormControl('firstName', [
+            firstName: new FormControl('', [
                 Validators.required,
                 Validators.minLength(4),
             ]),
-            lastName: new FormControl('lastName', [
+            lastName: new FormControl('', [
                 Validators.required,
                 Validators.minLength(4),
             ]),
-            email: new FormControl('email', [
+            email: new FormControl('', [
                 Validators.required,
                 Validators.minLength(4),
             ]),
-            password: new FormControl('password', [
+            password: new FormControl('', [
                 Validators.required,
                 Validators.minLength(4),
             ]),

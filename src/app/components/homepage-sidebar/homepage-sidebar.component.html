@@ -1,0 +1,5 @@
+<div class="sidebar">
+    <div *ngFor="let event of events">
+        <app-sidebar-item [routerLink]="['/event', event.event_id]" style="cursor: pointer;" [event]="event"></app-sidebar-item>
+    </div>
+</div>

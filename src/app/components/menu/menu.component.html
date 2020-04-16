@@ -2,20 +2,10 @@
     <nav [ngClass]="scrolled ? 'shadow' : null" class="row">
         <div class="logo-container col p-4">
             <img src="../../../assets/logo.png" height="45px" alt="menu-logo" [routerLink]="['/']"
-                 class="cursor-pointer">
+                class="cursor-pointer">
         </div>
         <div class="items-container col d-flex align-items-center">
-            <div *ngFor="let item of menuItems">
-                <div class="menu-item cursor-pointer" (click)="item.action()" [routerLink]="item.url">
-                    {{ item.name }}
-                    <div class="submenu shadow" *ngIf="item.children.length > 0">
-                        <div class="submenu-item" *ngFor="let subItem of item.children">
-                            <div class="text">{{ subItem.name }}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <app-search-bar></app-search-bar>
         </div>
         <div class="items-container col d-flex align-items-center justify-content-end">
             <div *ngFor="let item of rightMenuItems">

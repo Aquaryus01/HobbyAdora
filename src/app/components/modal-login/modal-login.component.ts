@@ -28,12 +28,12 @@ export class ModalLoginComponent implements OnInit {
                 private activeModal: NgbActiveModal) {
 
         this.form = new FormGroup({
-            email: new FormControl('email', [
+            email: new FormControl('', [
                 Validators.required,
                 Validators.email,
                 Validators.minLength(4),
             ]),
-            password: new FormControl('password', [
+            password: new FormControl('', [
                 Validators.required,
                 Validators.minLength(4),
             ]),
